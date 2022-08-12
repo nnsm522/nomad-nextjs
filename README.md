@@ -30,3 +30,17 @@
 2. NavBar에서 a 태그로 routing 설정하면 페이지가 항상 새로고침 됨
 3. next js 에서는 Link 태그로 a 태그를 감싸는 형태로 routing 설정을 하고, 이러면 새로고침 되지 않음.
 4. Link 태그에 href를 써 주고, a 태그에 style 등을 주는 방식으로 커스터마이징 가능
+
+### 1.4 CSS Modules
+
+1. \*\*\*.module.css 패턴으로 파일 생성 후 css 작성
+2. module을 사용할 파일에서 import
+
+- import styles from "./NavBar.module.css" 형태
+
+3. styles.className 형태로 style 사용 가능
+4. rendering 될 때 next js에서 자동으로 className을 랜덤으로 바꿔줌
+5. 여러 style을 적용하고 싶을 땐 2가지 방법 사용
+
+- className={`${styles.***} ${styles.###}`}
+- [styles.***, styles.###].join(" ")
