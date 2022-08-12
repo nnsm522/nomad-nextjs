@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJs Introduction
 
-## Getting Started
+# 1 FRAMEWORK OVERVIEW
 
-First, run the development server:
+### 1.0 Library vs Framework
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1. Library는 내가 코드를 가져다 쓰는 것이기 때문에 자유도가 높음
+2. Framework는 내 코드를 Framework 규칙에 맞게 작성해야 함
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 1.1 Pages
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. next js 에서는 pages 폴더의 js 파일명을 url로 가져다 씀
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- create-react-app 에서는 React router DOM을 가져다 쓰고, router를 만들고 routes를 설계하고 component를 import하고 router를 render하는 등 시간이 많이 소요됨
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. 파일 안의 Component 명은 파일 명과 동일할 필요 없음
+3. Component는 export default로 작성해야 함
+4. next js는 404 not fount 페이지가 만들어져 있음
+5. index.js만 예외적으로 기본 url을 나타냄
 
-## Learn More
+### 1.2 Static Pre Rendering
 
-To learn more about Next.js, take a look at the following resources:
+1. react js 는 Client Side Rendering으로 빈 화면에 js코드로 화면을 그리는 것임.
+2. 때문에 인터넷이 느리거나 js 비활성화 된 경우 빈 화면을 보게 됨
+3. next js는 Server Side Rendering으로 Pre Rendering 되어 최소한 어떤 화면인지 볼 수 있음
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1.3 Routing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. pages 폴더 안에 index와 about을 만들고 NavBar를 components 폴더에 만들어줌
+2. NavBar에서 a 태그로 routing 설정하면 페이지가 항상 새로고침 됨
+3. next js 에서는 Link 태그로 a 태그를 감싸는 형태로 routing 설정을 하고, 이러면 새로고침 되지 않음.
+4. Link 태그에 href를 써 주고, a 태그에 style 등을 주는 방식으로 커스터마이징 가능
