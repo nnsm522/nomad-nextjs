@@ -44,3 +44,27 @@
 
 - className={`${styles.***} ${styles.###}`}
 - [styles.***, styles.###].join(" ")
+
+### 1.5 Styles JSX
+
+1. style을 사용하고자 하는 component 안에 style 태그 만들고 내부에 {``} 백틱 안에 css 생성
+
+- <style jsx>{` a {color: blue;} `}</style>
+
+2. 부모 component와 태그명, className 등이 겹쳐도 영향 없음
+3. {``} 내부에는 변수 삽입 가능
+
+### 1.6 Custom App
+
+1. pages/\_app.js는 다른 js 파일을 렌더링하기 전에 렌더링하는 파일임
+2. \_app.js를 통해 모든 페이지에 공통으로 적용될 style, component 등을 생성할 수 있음
+3. style 태그에 global을 넣으면 \_app.js에서 모든 페이지에 공통으로 적용될 style 생성 가능
+   \_app.js 기본 형태
+   export default function App({ Component, pageProps }) {
+   return (
+   <div>
+   <Component {...pageProps} />
+   </div>
+   );
+   }
+4. \_app.js에서는 styles/global.css를 import할 수 있음 (다른 파일에서는 불가)
